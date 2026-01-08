@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萬用作文模板使用說明</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --secondary-accent: #9b59b6; /* 新增紫色用於互動工具 */
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #4a4a4a;
+            --highlight-bg: #e3f2fd;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 3rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Container */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Sections */
+        section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--accent-color);
+            padding-left: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Audience */
+        .audience-list {
+            list-style: none;
+        }
+
+        .audience-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background-color: var(--highlight-bg);
+            border-radius: 8px;
+        }
+
+        .audience-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            min-width: 30px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Versions */
+        .version-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .version-container {
+                flex-direction: row;
+            }
+        }
+
+        .version-card {
+            flex: 1;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .version-card.v1 { border-top: 5px solid #2ecc71; }
+        .version-card.v2 { border-top: 5px solid #e74c3c; }
+
+        .version-badge {
+            align-self: flex-start;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .bg-v1 { background-color: #2ecc71; }
+        .bg-v2 { background-color: #e74c3c; }
+
+        .version-content {
+            flex-grow: 1;
+        }
+
+        /* Buttons Area */
+        .btn-group {
+            margin-top: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        /* Interactive Tool Button (Primary) */
+        .btn-interactive {
+            background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%);
+            color: white;
+            box-shadow: 0 4px 6px rgba(155, 89, 182, 0.2);
+            border: none;
+        }
+        
+        .btn-interactive:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(155, 89, 182, 0.3);
+        }
+
+        /* PDF Download Button (Secondary) */
+        .btn-download {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid #e0e0e0;
+        }
+
+        .btn-download:hover {
+            border-color: var(--primary-color);
+            background-color: #f8f9fa;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>萬用作文模板使用說明</h1>
+        <p>提升寫作能力的最佳輔助工具</p>
+    </header>
+
+    <div class="container">
+        
+        <section id="audience">
+            <h2>適用對象</h2>
+            <ul class="audience-list">
+                <li class="audience-item">
+                    <span class="audience-icon">🌱</span>
+                    <div>
+                        <strong>基礎鞏固：</strong><br>
+                        作文分數尚未達到 14 分的同學，建議<strong>整個模板套用</strong>（以老師給的分數為準）。
+                    </div>
+                </li>
+                <li class="audience-item">
+                    <span class="audience-icon">🚀</span>
+                    <div>
+                        <strong>進階活用：</strong><br>
+                        程度較好的同學，可以選擇幾個優美句子背誦，或是記憶整體架構，再隨題目自行靈活運用。
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <section id="features">
+            <h2>功能簡介</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">👆</span>
+                    <div class="feature-title">互動式閱讀：單字卡</div>
+                    <div class="feature-desc">點擊單字即可顯示詳細解釋與例句，學習不中斷。</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">📝</span>
+                    <div class="feature-title">互動式閱讀：註解鈕</div>
+                    <div class="feature-desc">點擊 [1] [2] 等數字，查看該空格適合填入的內容範例。</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🙈</span>
+                    <div class="feature-title">背誦遮罩模式 (QUIZ)</div>
+                    <div class="feature-desc">切換至 QUIZ 模式，重要單字將自動隱藏，幫助自我檢測是否熟記。</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🎧</span>
+                    <div class="feature-title">沉浸式聽讀</div>
+                    <div class="feature-desc">支援整段朗讀與單字發音，利用聽覺輔助記憶，讓句型自然內化。</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">☁️</span>
+                    <div class="feature-title">雲端資源串聯</div>
+                    <div class="feature-desc">內建連結，可隨時查看更多套用此模板的優秀範文。</div>
+                </div>
+                <div class="feature-card">
+                    <span class="feature-icon">🤖</span>
+                    <div class="feature-title">機器人示範</div>
+                    <div class="feature-desc">上傳您的題目，讓 AI 機器人親自示範如何套用模板寫給你看。</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="versions">
+            <h2>版本說明與下載</h2>
+            <div class="version-container">
+                <div class="version-card v1">
+                    <div class="version-content">
+                        <span class="version-badge bg-v1">通用版</span>
+                        <h3>版本 1</h3>
+                        <p style="margin-top: 10px; color: #666;">適合大多數的作文題目。若準備時間不夠，建議優先背誦此版本。</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://kghspaul.github.io/essayframe1" class="btn btn-interactive" target="_blank">🎮 前往互動學習工具</a>
+                        <a href="./essay_v1.pdf" class="btn btn-download" download>📄 下載 PDF 版本</a>
+                    </div>
+                </div>
+
+                <div class="version-card v2">
+                    <div class="version-content">
+                        <span class="version-badge bg-v2">對比題型專用</span>
+                        <h3>版本 2</h3>
+                        <p style="margin-top: 10px; color: #666;">只適用於「兩張圖片互為對比」的題目（例如：114學測颱風假、111學測公園類型選擇）。</p>
+                    </div>
+                    <div class="btn-group">
+                        <a href="https://kghspaul.github.io/essayframe2" class="btn btn-interactive" target="_blank">🎮 前往互動學習工具</a>
+                        <a href="./essay_v2.pdf" class="btn btn-download" download>📄 下載 PDF 版本</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 萬用作文模板系統 | Designed for Students</p>
+    </footer>
+
+</body>
+</html>
